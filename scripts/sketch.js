@@ -13,8 +13,15 @@ let showCollisionMessage = false; // Variável para controlar a exibição da me
 let gameStarted = false; // Variável para controlar se o jogo começou
 let cenarioImg; // Imagem do menu inicial
 let playImg; // Imagem do botão de "Play"
+let helpImg; // Imagem do botão de "Play"
 let playButton; // Botão invisível sobre a imagem do botão
+let playButton2; // Botão invisível sobre a imagem do botão
 let shockSound; // Variável para o som do choque
+let introdutionScreen
+let popupDiv; // Div do popup
+
+
+
 
 function preload() {
   personImg = loadImage('images/person.png'); // Substitua pelo caminho correto da imagem do personagem
@@ -22,6 +29,7 @@ function preload() {
   carpetImg = loadImage('images/carpet.png'); // Substitua pelo caminho correto da imagem do tapete
   cenarioImg = loadImage('images/cenario.png'); // Imagem de fundo para o menu inicial
   playImg = loadImage('images/play.png'); // Imagem do botão "Play"
+  helpImg = loadImage('images/help.png'); // Imagem do botão "Play"
   backgroundMusic = loadSound('audios/music.mp3'); // Música de fundo
   shockSound = loadSound('audios/shock.mp3'); // Som do choque
 }
@@ -38,6 +46,37 @@ function setup() {
   playButton.style("background", "transparent"); // Torna o botão invisível
   playButton.style("border", "none"); // Remove bordas
   playButton.mousePressed(startGame); // Associa a função ao clique
+  
+  playButton2 = createButton("");
+  playButton2.position(width / 10 - -305, height / 2 + 150); // Centraliza o botão
+  playButton2.size(100, 100); // Ajuste ao tamanho da imagem
+  playButton2.style("background", "transparent"); // Torna o botão invisível
+  playButton2.style("border", "none"); // Remove bordas
+  playButton2.mousePressed(openPopup); // Chama a função do popup
+  //DEVE-SE CHAMAR A NOVA TELA AQUI
+
+  popupDiv = createDiv('');
+  popupDiv.id('popup');
+  popupDiv.hide(); // Esconde inicialmente
+  popupDiv.style('position', 'absolute');
+  popupDiv.style('top', '50%');
+  popupDiv.style('left', '50%');
+  popupDiv.style('transform', 'translate(-50%, -50%)');
+  popupDiv.style('background', '#fff');
+  popupDiv.style('padding', '20px');
+  popupDiv.style('border', '2px solid #000');
+  popupDiv.style('border-radius', '8px');
+  popupDiv.style('text-align', 'center');
+
+  let popupText = createP('Esse jogo aborda diversos conceitos da Disciplina de Física para Ciência da Computação. Cada fase representa um minigame que explora um conceito físico! Descubra como passar de cada uma das fases, divirta-se!');
+  popupText.parent(popupDiv);
+
+  let closeButton = createButton('Fechar');
+  closeButton.mousePressed(closePopup);
+  closeButton.parent(popupDiv);
+
+  
+
 }
 
 function draw() {
@@ -45,13 +84,20 @@ function draw() {
     // Desenha o menu inicial
     image(cenarioImg, 0, 0, width, height); // Imagem de fundo do menu inicial
     image(playImg, width / 2 - 75, height / 2 + 50, 150, 120); // Imagem do botão "Play"
+    image(helpImg, width / 10 - -305, height / 2 + 150, 100, 100); // Imagem do botão "Help"
     return; // Sai da função draw enquanto o jogo não começou
   }
 
   // Desenha a imagem de fundo
   image(bgImg, 0, 0, width, height);
 
-  // Desenha o tapete no chão
+  // Exibe o texto "teste" no canto superior direito
+  fill(255); // Cor branca
+  textSize(24); // Tamanho do texto
+  textAlign(RIGHT, TOP); // Alinha o texto ao canto superior direito
+  text("Para passar de fase,\n você deve encontrar um jeito de tomar\n um choque da maçaneta!", width - padding, padding);
+
+  // Restante do código do jogo
   image(carpetImg, 215, 455, 370, 300);
 
   // Desenhando a barra de progresso
@@ -113,9 +159,8 @@ function draw() {
     showCollisionMessage = true; // Exibe a mensagem de colisão
     generateShockParticles(wallX - 50, random(0, wallHeight)); // Gera partículas na posição aleatória da parede
     if (!shockSound.isPlaying()) {
-    shockSound.play(); // Toca o som do choque
-  }
-    
+      shockSound.play(); // Toca o som do choque
+    }
   } else {
     showCollisionMessage = false; // Desativa a mensagem caso não tenha colisão
     shockSound.stop();
@@ -131,6 +176,7 @@ function draw() {
   }
 }
 
+
 // Função chamada ao pressionar o botão "Iniciar"
 function startGame() {
   gameStarted = true; // Atualiza o estado do jogo
@@ -140,6 +186,16 @@ function startGame() {
     backgroundMusic.loop(); // Toca a música em loop
   }
 }
+
+function openPopup() {
+  popupDiv.show(); // Exibe o popup
+}
+
+// Função para fechar o popup
+function closePopup() {
+  popupDiv.hide(); // Esconde o popup
+}
+
 
 // Função para criar partículas
 function createParticles(x, y) {
@@ -189,3 +245,4 @@ class Particle {
     }
   }
 }
+
