@@ -87,6 +87,51 @@ O objetivo é ensinar conceitos de Física de forma lúdica, como o fenômeno de
 
 ---
 
+ * FASE 2 * 
+1. Estrutura do Jogo
+O jogo é dividido em três telas:
+
+Tela Inicial: Introduz o jogador ao jogo e oferece uma breve descrição sobre a missão.
+Tela do Jogo: Onde o jogador interage, colocando componentes no circuito, como resistores e pilhas.
+Tela Final: Aparece quando o jogador completa o circuito corretamente, mostrando uma mensagem de vitória.
+2. Criação da Malha de Conexões
+A função criarMalha() gera uma matriz de pontos para representar as conexões possíveis no circuito. Essa malha é 4x4 (com tamanho configurado na constante TAMANHO_MALHA), e os pontos são distribuídos de forma que eles possam ser conectados horizontal e verticalmente.
+
+3. Função de Conexões e Objetivos
+Conexões: Existem duas matrizes (conexoesHorizontais e conexoesVerticais) que armazenam as conexões entre os pontos. Cada célula dessas matrizes pode ter valores diferentes:
+0 (sem conexão),
+1 (conexão normal),
+2 (pilha),
+3 (resistor).
+Objetivo: A função inicializarObjetivo() define as conexões corretas que o jogador deve criar para concluir o circuito corretamente.
+4. Componente Selecionado
+O jogador pode escolher entre três componentes para inserir no circuito:
+
+Resistor: Representado pela imagem de um resistor.
+Pilha: Representada por uma imagem de uma bateria.
+Fio: Representado pela conexão básica entre os pontos.
+Quando o jogador clica em um componente disponível (resistor ou pilha), ele se torna o componente "selecionado", e o próximo clique no ponto da malha vai adicionar esse componente.
+5. Desenho do Circuito
+A função desenharCircuito() desenha as conexões entre os pontos e desenha os componentes como a pilha e o resistor nas posições apropriadas. A cor das conexões é determinada pela função definirCorConexao().
+6. Verificação do Circuito
+A função verificarCircuito() verifica se as conexões feitas pelo jogador estão corretas. Se as conexões estiverem incorretas, o jogo toca um som de erro e não avança para a tela final. Se o circuito estiver correto, o jogo toca um som de sucesso e avança para a tela final.
+
+7. Funções Auxiliares
+desenharResistor(): Desenha um resistor nas coordenadas especificadas.
+desenharPilha(): Desenha a representação da pilha (bateria).
+mousePressed(): A lógica de clicar para selecionar os componentes e fazer as conexões é gerenciada aqui. Ela verifica se o clique foi em algum componente na barra inferior ou se foi em uma conexão da malha.
+8. Som
+Sons são usados para feedback durante o jogo:
+
+Som de circuito correto: Tocado quando o circuito é montado corretamente.
+Som de circuito incorreto: Tocado quando o jogador faz uma conexão errada.
+Sugestões e Observações:
+Aprimorar Interatividade: A parte de interação do jogador com a malha pode ser mais detalhada. Você pode adicionar uma lógica para que, se o jogador errar, ele consiga fazer ajustes facilmente.
+Expandir Objetivos: A lógica de objetivos e regras do circuito pode ser expandida para incluir mais componentes e desafios.
+Estado Final: A tela final pode ter um botão para reiniciar o jogo ou mostrar mais informações educativas sobre os conceitos de eletricidade.
+Esse esboço de código já está bem estruturado, com uma divisão clara entre as fases do jogo, a lógica de construção do circuito e a verificação de resultados.
+
+
 ## 🔮 **Futuras Melhorias**
 
 1. Adicionar mais fases com diferentes conceitos físicos.
