@@ -131,6 +131,52 @@ Expandir Objetivos: A lógica de objetivos e regras do circuito pode ser expandi
 Estado Final: A tela final pode ter um botão para reiniciar o jogo ou mostrar mais informações educativas sobre os conceitos de eletricidade.
 Esse esboço de código já está bem estruturado, com uma divisão clara entre as fases do jogo, a lógica de construção do circuito e a verificação de resultados.
 
+* FASE 3 *
+
+Objetivo do Jogo: O objetivo deste jogo é interagir com diferentes elementos para controlar um fluxo de água e acionar uma lâmpada, com base em comportamentos físicos simulados no ambiente. O jogador precisa manipular dois quadrados coloridos (vermelho e verde), um imã rotativo, uma torneira e uma lâmpada para alcançar o funcionamento correto do sistema.
+
+Elementos do Jogo:
+Imã (Magnet):
+
+O imã tem um eixo de rotação e gira quando a água está fluindo.
+O imã é representado por uma linha com duas extremidades: uma vermelha (representando o norte) e uma azul (representando o sul).
+O movimento do imã é controlado pelo estado da água fluindo.
+Torneira (Faucet):
+
+A torneira controla o fluxo de água. Quando acionada, ela libera água que preenche um retângulo representando o nível de água.
+A água só pode fluir se um quadrado vermelho (chave para o imã) estiver na posição correta, e o quadrado verde (chave para a lâmpada) também estiver posicionado corretamente.
+Lâmpada (Lamp):
+
+A lâmpada acende automaticamente quando o imã começa a girar, e apaga quando o imã para de girar.
+O controle da lâmpada está diretamente vinculado à rotação do imã.
+Quadrados (Squares):
+
+Dois quadrados (vermelho e verde) podem ser arrastados pelo jogador. O quadrado vermelho deve ser colocado perto do imã, enquanto o quadrado verde deve ser colocado perto da lâmpada.
+Quando os quadrados são posicionados corretamente, eles permitem a ativação do fluxo de água.
+Água:
+
+A água flui da torneira quando esta é acionada. O nível da água aumenta até um limite máximo, simulando o fluxo.
+A água é representada visualmente como um retângulo azul que cresce à medida que o fluxo de água aumenta.
+Mecânica do Jogo:
+Manipulação dos Quadrados:
+
+O jogador pode arrastar os quadrados com o mouse. Cada quadrado "gruda" automaticamente no imã ou na lâmpada quando está suficientemente próximo.
+O quadrado vermelho deve ser colocado perto do imã, enquanto o quadrado verde deve ser posicionado perto da lâmpada.
+Fluxo de Água:
+
+O fluxo de água só é ativado quando ambos os quadrados estão na posição correta (vermelho no imã e verde na lâmpada).
+A torneira pode ser ligada ou desligada clicando sobre ela. Quando ligada, a água começa a fluir, e o nível de água aumenta até o limite máximo.
+Rotação do Imã:
+
+Quando a água está fluindo, o imã começa a girar, o que acende a lâmpada automaticamente.
+A lâmpada simula um comportamento de acendimento ou apagamento com base na rotação do imã.
+Interação e Desafios:
+O jogador precisa posicionar corretamente os quadrados para acionar o fluxo de água e fazer com que o imã gire, ativando a lâmpada.
+A física dos quadrados que "grudam" no imã ou na lâmpada torna a interação mais dinâmica, exigindo que o jogador mova os quadrados de maneira estratégica.
+O objetivo final é criar uma sequência de eventos onde a água flui, o imã gira e a lâmpada acende.
+Tecnologias Utilizadas:
+P5.js: A biblioteca de JavaScript para visualizações interativas foi usada para criar o ambiente visual, controlar os elementos e a física do jogo, além da interação com o mouse.
+
 
 ## 🔮 **Futuras Melhorias**
 
