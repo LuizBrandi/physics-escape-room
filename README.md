@@ -82,5 +82,21 @@ O jogo de escape room possui **4 fases**, representadas por arquivos HTML chamad
 - O ângulo de incidência e o ângulo de refração são relacionados pela Lei de Snell, que descreve como a luz se curva ao passar entre meios de diferentes índices de refração.
 - Ao manipular as lentes ou prismas, o jogador ajusta a trajetória do feixe de luz de acordo com esses princípios, com o objetivo de fazer a luz atingir o ponto específico onde está o alvo.
 
+## Fase 5: Desafio das Lâmpadas
+
+**Objetivo:**
+Acender todas as lâmpadas e configurar a mesma cor em cada uma delas.
+
+**Como funciona:**
+1. **Lâmpadas**: São inicialmente apagadas e podem ser acesas ou apagadas ao interagir com as alavancas.
+2. **Alavancas**: Cada alavanca controla o estado (on/off) de algumas lâmpadas. Ao puxar uma alavanca, as lâmpadas associadas alternam entre acesas e apagadas.
+3. **Botões de Cor**: Cada botão altera a cor das lâmpadas associadas. Existem botões para trocar entre duas cores.
+4. **Vitória**: O jogo é vencido quando todas as lâmpadas estão acesas e possuem a mesma cor.
+
+### Controles:
+- Clique nas **alavancas** para acender ou apagar lâmpadas.
+- Clique nos **botões de cor** para mudar as cores das lâmpadas.
+- Quando todas as lâmpadas estiverem acesas e com a mesma cor, a vitória será alcançada.
+
 ---
 
