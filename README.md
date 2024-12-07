@@ -41,7 +41,7 @@ O jogo de escape room possui **4 fases**, representadas por arquivos HTML chamad
 # Descrição das Fases do Jogo de Escape Room
 
 ## Fase 1: Tapete
-**Objetivo:** O objetivo da fase é fazer o jogador ter um choque elétrico causado pela energia estática. 
+**Objetivo:** O objetivo da fase é fazer o jogador ter um choque elétrico causado pela energia estática gerada pela eletrização por atrito. 
 
 **Como funciona:**
 - O jogador deverá interagir com o ambiente de forma a acumular energia estática, como ao andar sobre um tapete específico ou tocar em objetos com alto potencial de carga.
