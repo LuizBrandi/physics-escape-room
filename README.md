@@ -178,6 +178,69 @@ Tecnologias Utilizadas:
 P5.js: A biblioteca de JavaScript para visualizações interativas foi usada para criar o ambiente visual, controlar os elementos e a física do jogo, além da interação com o mouse.
 
 
+* FASE 4 *
+
+Resumo:
+O jogo "Refração Laser" é um jogo de física no qual o jogador deve usar um emissor de laser e um espelho para direcionar o feixe de laser até um alvo, utilizando refração e reflexão. O objetivo é atingir o alvo com precisão dentro de um tempo limitado, e o jogador pode interagir com os elementos do jogo arrastando o emissor e o espelho.
+
+Componentes do Jogo:
+Laser: O feixe de laser pode ser disparado a partir de um emissor. O ângulo de emissão pode ser ajustado, e a intensidade do feixe depende da interação com outros objetos no cenário.
+Emissor de Laser: Um retângulo que o jogador pode arrastar para reposicionar o ponto de origem do laser. A direção do laser é controlada pelas teclas de seta.
+Espelho: Um triângulo que pode ser arrastado para modificar a direção do laser. O feixe pode se refletir ou refratar dependendo da posição e da orientação do espelho.
+Alvo: O objetivo do jogo é acertar o laser no alvo, representado por uma imagem circular no cenário.
+Paredes: Obstáculos no cenário que podem desviar o laser se ele entrar em contato com eles.
+Temporizador: O jogador tem um tempo limitado para completar o objetivo do jogo.
+Estrutura do Código:
+Variáveis Principais:
+
+laserRect: Define a área clicável para mover o emissor de laser.
+laserOrigin: Define a origem do laser.
+laserAngle: Controle do ângulo do laser.
+mirror: Representa o espelho e suas propriedades (posição e vértices).
+target: Representa o alvo.
+walls: Lista de paredes que podem refletir ou bloquear o laser.
+timer: Temporizador para limitar o tempo do jogador.
+laserColor: Cor do laser, que pode ser alterada pelo jogador.
+Funções Importantes:
+
+preload(): Carrega as imagens e fontes utilizadas no jogo.
+setup(): Configura o ambiente de jogo (tela, variáveis, etc.).
+setupGame(): Inicializa as variáveis específicas do jogo (posição inicial do laser, espelho, alvo e paredes).
+draw(): Função principal de renderização, desenhando os elementos na tela e controlando o fluxo do jogo (começo, jogo, vitória).
+drawLaser(): Desenha o laser e calcula as interações com objetos (reflexão, refração).
+drawMirror(): Desenha o espelho.
+drawTarget(): Desenha o alvo.
+drawWalls(): Desenha as paredes no cenário.
+mousePressed(), mouseDragged(), mouseReleased(): Controlam a interação do mouse com o emissor e o espelho.
+keyPressed(): Controla as teclas para rotacionar o laser e ativar/desativar o feixe.
+calculateMirrorVertices(): Calcula as posições dos vértices do espelho com base na sua posição e tamanho.
+Interação:
+
+O jogador pode mover o emissor de laser e o espelho com o mouse.
+O laser pode ser ativado/desativado pressionando a tecla space.
+O ângulo do laser pode ser ajustado usando as setas direita e esquerda.
+O jogador deve ajustar a posição do espelho e do emissor para refletir ou refratar o laser até atingir o alvo.
+Física:
+
+Reflexão: O laser pode se refletir no espelho dependendo da sua orientação. A interação física é baseada na fórmula de reflexão de luz.
+Refração: O laser também pode se refratar ao passar por um espelho, com base no índice de refração do material do espelho.
+Fluxo do Jogo:
+Tela Inicial:
+
+Apresenta o título "Refração Laser" com um botão para começar o jogo.
+O botão "Jogar" inicia o jogo e muda o estado para "game".
+Durante o Jogo:
+
+O jogador deve controlar o emissor e o espelho para guiar o laser até o alvo.
+O temporizador é exibido, e o jogador deve acertar o alvo dentro do limite de tempo.
+O jogo oferece instruções na tela e um seletor de cor para personalizar o laser.
+Tela de Vitória:
+
+Quando o alvo é atingido, o jogo muda para a tela de vitória.
+O jogador é parabenizado e pode reiniciar o jogo ou voltar à tela inicial.
+Conclusão:
+"Refração Laser" é um jogo interativo que utiliza conceitos de física (reflexão e refração) e permite ao jogador experimentar com a direção e a cor do laser para atingir um alvo. Com um temporizador e um sistema de interações físicas, o jogo oferece um desafio interessante, combinando raciocínio lógico e precisão para vencer.
+
 ## 🔮 **Futuras Melhorias**
 
 1. Adicionar mais fases com diferentes conceitos físicos.
