@@ -1,4 +1,4 @@
-# Manual para Jogar os Jogos de Escape Room
+# Physic Escape Room 🔬🧪
 
 ## Passo 1: Instalar as Ferramentas Necessárias
 
